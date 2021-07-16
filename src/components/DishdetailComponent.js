@@ -30,6 +30,7 @@ function RenderComments({comments}){
                             day: "2-digit"
                         }).format(new Date(comment.date))}</li>
                     </ul>
+                    
                 </div>
             );
         });
@@ -60,8 +61,9 @@ const Dishdetail=(props)=>{
                     <RenderDish dish={props.dish}/>
                 </div>
                 <div className="col-12 col-md-5 m-1">
-                    <RenderComments comments={props.comment}/>
-                    <CommentForm/>
+                    <RenderComments comments={props.comment} />
+                    <CommentForm addComment={props.addComment}
+                    dishID={props.dish.id} />
                 </div>
             </div>
         </div>
@@ -92,8 +94,7 @@ class CommentForm extends Component{
     }
     handleSubmit(values){
         this.toggleCommentModal();
-        console.log("Current State is: "+ JSON.stringify(values));
-        alert("Current State is: "+ JSON.stringify(values));
+        this.props.addComment(this.props.dishID, values.rating, values.author, values.comment);
     }
     render(){
         return(
