@@ -4,7 +4,7 @@ import {Card,CardImg,CardBody,CardText, CardTitle, Breadcrumb, BreadcrumbItem,Bu
 import {Link} from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form'; 
 import { FadeTransform, Fade, Stagger }from 'react-animation-components';
-import { Loading } from './LoadingComponent'
+import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/BaseUrl';
 
 
@@ -54,34 +54,7 @@ function RenderComments({comments}){
         else
             return(
                 <div></div>
-            );
-        // const comment=comments.map((comment)=>{
-        //     return(
-        //         <div>
-        //             <ul className="list-unstyled">
-        //                 <Stagger in>
-        //                     <Fade in>
-        //                         <li key={comment.id}>
-        //                             <p>{comment.comment}</p>
-        //                             <p>--{comment.author}, {new Intl.DateTimeFormat('en-US',{
-        //                             year:'numeric',
-        //                             month:'short',
-        //                             day: "2-digit"
-        //                             }).format(new Date(comment.date))}</p>
-        //                         </li>
-        //                     </Fade>
-        //                 </Stagger>
-        //             </ul>
-                    
-        //         </div>
-        //     );
-        // });
-        // return(
-        //     <div>
-        //         <h4>Comments</h4>
-        //         {comment}
-        //     </div>
-        // );  
+            ); 
 }
 const Dishdetail=(props)=>{
     if(props.isLoading){
