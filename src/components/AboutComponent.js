@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function RenderLeader({lead}){
     return(
         <div  className="col-12 mt-5">
-            <li key={lead.id}>
+            <li key={lead.id} className="list-unstyled">
                 <Media  className="row">
                     <Media left middle className="col-12 col-md-2">
                         <Media object src={lead.image} alt={lead.name}/>
