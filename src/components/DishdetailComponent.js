@@ -10,7 +10,7 @@ function RenderDish({dish}){
         return(
             
             <Card>
-                <CardImg width="100%" object src={dish.image} alt={dish.name} />
+                <CardImg width="100%" src={dish.image} alt={dish.name} />
                 <CardBody>
                     <CardTitle><strong>{dish.name}</strong></CardTitle>
                     <CardText>{dish.description}</CardText>
@@ -67,7 +67,7 @@ const Dishdetail=(props)=>{
             <div className="row">
                 <Breadcrumb tag="nav" listTag="div">
                     <BreadcrumbItem ><Link to='/menu'>Menu</Link></BreadcrumbItem>
-                    <BreadcrumbItem active><Link  >{props.dish.name}</Link></BreadcrumbItem>
+                    <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
                 </Breadcrumb>
                 <div className="col-12"> 
                     <h3>{props.dish.name}</h3>
@@ -87,10 +87,6 @@ const Dishdetail=(props)=>{
             </div>
         </div>
     );
-    }
-    else{
-    return(<div></div>);
-    
     }
 }
 
